@@ -1,0 +1,346 @@
+:root {
+  --bg: #0b0a10;
+  --panel: #141225;
+  --panel-2: #0f0d1a;
+  --primary: #a855f7;
+  --primary-dark: #7c3aed;
+  --text: #e5e7eb;
+  --muted: #a1a1aa;
+  --border: rgba(255, 255, 255, 0.08);
+  --success: #22c55e;
+  --danger: #ef4444;
+  --glow: rgba(168, 85, 247, 0.25);
+}
+
+/* ================= BASE ================= */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ================= NAV ================= */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(20, 18, 37, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+nav button:hover {
+  background: var(--primary);
+  color: #0b0a10;
+}
+
+/* ================= BOTÕES ================= */
+button {
+  background: var(--primary);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #0b0a10;
+  transition: 0.2s;
+  box-shadow: 0 0 0 transparent;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 0 18px var(--glow);
+}
+
+button[onclick*="fechar"] {
+  background: #2a243d;
+  color: var(--text);
+}
+
+button[onclick*="fechar"]:hover {
+  background: #3b2f5c;
+}
+
+/* ================= SEÇÕES ================= */
+.conteudo-secao {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= INPUTS ================= */
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 10px var(--glow);
+}
+
+/* ================= DASHBOARD ================= */
+.stat-card {
+  background: linear-gradient(145deg, #1a1630, #141225);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 14px;
+  text-align: center;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px var(--glow);
+}
+
+/* título (Pacientes / Consultas) */
+.stat-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* número*/
+.stat-card p {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--glow);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* ================= CALENDÁRIO ================= */
+.calendario-semana,
+.calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendario-semana div {
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.dia-card {
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dia-card:hover {
+  background: #1b1633;
+  box-shadow: 0 0 15px var(--glow);
+}
+
+.dia-card strong {
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.dia-card div {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ================= HORÁRIOS ================= */
+#lista-horarios-modal button {
+  background: #1a1630;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#lista-horarios-modal button:hover {
+  background: #2a2247;
+}
+
+.horario-ocupado {
+  background: var(--danger) !important;
+  color: white !important;
+  cursor: not-allowed;
+}
+
+#lista-horarios-modal button.selected {
+  background: var(--primary);
+  color: #0b0a10;
+  box-shadow: 0 0 15px var(--glow);
+}
+
+/* ================= MODAL ================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-conteudo {
+  width: 420px;
+  max-width: 95%;
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--border);
+}
+
+/* ================= PACIENTES ================= */
+.lista-pacientes div {
+  padding: 10px;
+  background: var(--panel-2);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.lista-pacientes div:hover {
+  background: var(--primary);
+  color: #0b0a10;
+}
+
+/* ================= ODONTOGRAMA ================= */
+.arcada {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 14px 0;
+}
+
+.dente-wrapper {
+  width: 52px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(1.6);
+  margin: 14px;
+  transition: 0.2s;
+}
+
+.dente-wrapper:hover {
+  transform: scale(1.75);
+}
+
+.dente-numero {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.face {
+  fill: rgba(168, 85, 247, 0.08);
+  stroke: #000;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.face:hover {
+  fill: rgba(168, 85, 247, 0.35);
+}
+
+/* ================= TOAST ================= */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  border-radius: 10px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.25s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#mes-atual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* setas */
+#mes-atual button {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: 0.2s;
+}
+
+#mes-atual button:hover {
+  color: var(--primary);
+}
+
+/* nome do mês */
+#mes-atual strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}

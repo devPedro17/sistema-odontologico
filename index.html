@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sistema Prodonto</title>
+  </head>
+  <body>
+    <nav>
+      <button onclick="carregarTela('cadastro')">Cadastro</button>
+      <button onclick="carregarTela('agenda')">Agenda</button>
+      <button onclick="carregarTela('odontograma')">Odontograma</button>
+    </nav>
+
+    <div id="app-container">
+      <h1>Bem-vindo! Escolha uma opção acima.</h1>
+    </div>
+
+    <script src="{{ url_for('static',filename='script.js') }}"></script>
+  </body>
+</html>

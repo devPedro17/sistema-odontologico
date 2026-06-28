@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OdontoHub</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+
+  <body onload="carregarTela('home')">
+    <!-- ================= NAV ================= -->
+    <nav>
+      <button onclick="carregarTela('home')">Dashboard</button>
+      <button onclick="carregarTela('cadastro')">Cadastro</button>
+      <button onclick="carregarTela('agenda')">Agenda</button>
+      <button onclick="carregarTela('odontograma')">Odontograma</button>
+    </nav>
+
+    <!-- ================= DASHBOARD ================= -->
+    <section id="secao-home" class="conteudo-secao">
+      <h2>Dashboard</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Pacientes</h3>
+          <p id="count-pacientes">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Consultas Hoje</h3>
+          <p id="count-consultas">0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CADASTRO ================= -->
+    <section id="secao-cadastro" class="conteudo-secao" style="display: none">
+      <h2>Novo Paciente</h2>
+      <input id="nome-paciente" placeholder="Nome" />
+      <input id="cpf-paciente" placeholder="CPF" />
+      <input id="nascimento-paciente" placeholder="Nascimento" />
+      <input id="celular-paciente" placeholder="Celular" />
+      <input id="input-alergias-cadastro" placeholder="Alergias" />
+      <button onclick="enviarCadastro()">Salvar</button>
+    </section>
+
+    <!-- ================= AGENDA ================= -->
+    <section id="secao-agenda" class="conteudo-secao" style="display: none">
+      <h2>Agenda</h2>
+      <div id="mes-atual"></div>
+      <div class="calendario-semana">
+        <div>Dom</div>
+        <div>Seg</div>
+        <div>Ter</div>
+        <div>Qua</div>
+        <div>Qui</div>
+        <div>Sex</div>
+        <div>Sáb</div>
+      </div>
+      <div class="calendario-grid"></div>
+    </section>
+
+    <!-- ================= ODONTOGRAMA ================= -->
+    <section
+      id="secao-odontograma"
+      class="conteudo-secao"
+      style="display: none"
+    >
+      <h2>Ficha Odontológica</h2>
+      <input
+        id="busca-paciente"
+        placeholder="Buscar paciente..."
+        oninput="filtrarPacientes()"
+      />
+      <div id="lista-pacientes" class="lista-pacientes"></div>
+      <div
+        id="odontograma-ficha"
+        class="ficha-odontologica"
+        style="display: none"
+      >
+        <h3 id="nome-paciente-ficha"></h3>
+        <p><strong>CPF:</strong> <span id="cpf-ficha"></span></p>
+        <p><strong>Telefone:</strong> <span id="tel-ficha"></span></p>
+        <p><strong>Alergias:</strong> <span id="alergias-ficha"></span></p>
+        <div class="arcadas-container">
+          <div id="arcada-superior" class="arcada"></div>
+          <div id="arcada-inferior" class="arcada"></div>
+        </div>
+        <h4>Procedimentos</h4>
+        <ul id="lista-procedimentos-lancados"></ul>
+        <button onclick="salvarOdontogramaCompleto()">Salvar Ficha</button>
+      </div>
+    </section>
+
+    <!-- ================= MODAL AGENDA ================= -->
+    <div id="modal-agenda-central" class="modal-overlay" style="display: none">
+      <div class="modal-conteudo agenda-card">
+        <h3 id="data-selecionada-titulo"></h3>
+        <input
+          id="busca-modal-paciente"
+          placeholder="Buscar paciente..."
+          oninput="filtrarSelectAgenda()"
+        />
+        <select id="select-paciente-agendamento"></select>
+        <select id="select-dentista-agenda">
+          <option value="Geral">Geral</option>
+          <option value="Dr. Julio">Dr. Julio</option>
+          <option value="Dra. Maria">Dra. Maria</option>
+        </select>
+        <div id="lista-horarios-modal"></div>
+        <button onclick="confirmarAgendamento()" id="btn-confirmar-agenda">
+          Confirmar Agendamento
+        </button>
+        <button onclick="fecharModalAgenda()">Fechar</button>
+      </div>
+    </div>
+
+    <!-- ================= MODAL PROCEDIMENTO ================= -->
+    <div id="modal-odontograma" class="modal-overlay" style="display: none">
+      <div id="card-agendamento" class="card-agendamento"></div>
+      <div class="modal-conteudo">
+        <h3 id="numero-dente-selecionado"></h3>
+        <select id="select-procedimento-tipo">
+          <option value="Restauração">Restauração</option>
+          <option value="Extração">Extração</option>
+          <option value="Limpeza">Limpeza</option>
+          <option value="Aparelho Ortodôntico">Aparelho Ortodôntico</option>
+        </select>
+        <button onclick="confirmarProcedimento()">Confirmar</button>
+        <button onclick="fecharModalProcedimento()">Fechar</button>
+      </div>
+    </div>
+
+    <!-- ================= TOAST ================= -->
+    <div id="toast" class="toast"></div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
