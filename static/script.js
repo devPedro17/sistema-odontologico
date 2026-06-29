@@ -1,6 +1,6 @@
-const API_URL = window.location.hostname === "localhost"
+const API_URL = window.location.hostname === "localhost" 
   ? "http://127.0.0.1:5000"
-  : "https://SEU-BACKEND-ONLINE.com";
+  : "https://sistema-odontologico-7f8v.onrender.com";
 
 /* ================= ESTADO GLOBAL ================= */
 let pacientesCache = [];
