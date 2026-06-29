@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import database
 import sqlite3
 from datetime import date
+import os
 
 def conectar():
     return sqlite3.connect('meu_banco.db')
@@ -15,6 +16,14 @@ def index():
     return render_template("index.html")
 
 
+
+@app.route('/reset-database')
+def reset_database():
+    db_file = 'odontohub.db' 
+    if os.path.exists(db_file):
+        os.remove(db_file)
+        return "Banco de dados apagado com sucesso! Agora reinicie o serviço no Render."
+    return "Ficheiro do banco de dados não encontrado."
 # ================= PACIENTES =================
 @app.route("/api/pacientes", methods=["GET", "POST"])
 def pacientes():
