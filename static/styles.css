@@ -344,3 +344,37 @@ select:focus {
   color: var(--text);
   letter-spacing: 0.5px;
 }
+/* ================= CARD DE AGENDAMENTO ================= */
+
+.card-agendamento {
+  position: absolute;
+  left: 20px;
+  top: 120px;
+  width: 300px;
+  background: #1b1633;
+  color: #ffffff;
+  border: 2px solid var(--primary);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  opacity: 1;
+  backdrop-filter: none;
+  z-index: 999;
+}
+
+.card-agendamento h4 {
+  margin: 0 0 12px;
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card-agendamento p {
+  margin: 8px 0;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.card-agendamento strong {
+  color: #ffffff;
+}
