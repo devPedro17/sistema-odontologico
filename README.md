@@ -1,163 +1,205 @@
 # 🦷 OdontoHub
 
-<p align="center">
-Sistema de gestão odontológica desenvolvido para otimizar o atendimento em consultórios, permitindo o gerenciamento de pacientes, agendamentos e procedimentos clínicos.
-</p>
+> Sistema web para gerenciamento de clínicas odontológicas desenvolvido com **Flask**, **Python**, **SQLite**, **HTML5**, **CSS3** e **JavaScript**.
+
+![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-success)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Flask](https://img.shields.io/badge/Flask-Framework-black)
+![SQLite](https://img.shields.io/badge/SQLite-Database-003B57)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-## 🚀 Tecnologias
+# 📋 Sobre o Projeto
 
-<p>
+O **OdontoHub** é uma aplicação web desenvolvida para facilitar o gerenciamento de clínicas odontológicas.
 
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+O sistema foi criado com foco em organização, produtividade e facilidade de uso, permitindo o gerenciamento completo de pacientes, consultas e procedimentos odontológicos por meio de uma interface simples e intuitiva.
 
-<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white">
-
-<img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white">
-
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-
-</p>
+Este projeto representa minha evolução como desenvolvedor Full Stack, aplicando conceitos de desenvolvimento web, integração entre frontend e backend e persistência de dados.
 
 ---
 
-# 📸 Imagens
+# 🚀 Tecnologias Utilizadas
+
+## Backend
+
+- Python
+- Flask
+- SQLite
+
+## Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+## Ferramentas
+
+- Git
+- GitHub
+
+---
+
+# ✨ Funcionalidades
+
+## 👤 Gestão de Pacientes
+
+- Cadastro de pacientes
+- Pesquisa de pacientes
+- Atualização de informações
+- Exclusão de registros
+
+---
+
+## 📅 Agenda de Consultas
+
+- Agendamento de consultas
+- Controle de horários ocupados
+- Organização dos atendimentos
+
+---
+
+## 📊 Dashboard
+
+- Atualização em tempo real
+- Visualização rápida das informações da clínica
+
+---
+
+## 🦷 Odontograma
+
+- Odontograma totalmente interativo
+- Registro de procedimentos
+- Salvamento automático no banco de dados
+
+---
+
+## 📖 Histórico
+
+- Histórico completo dos atendimentos
+- Consulta dos procedimentos realizados
+
+---
+
+# 🖼️ Demonstração
 
 ## Dashboard
 
-<img width="1365" height="597" alt="image" src="https://github.com/user-attachments/assets/acdf532a-7d5b-4ceb-b75c-21ebe2043026" />
+<img width="1365" height="597" alt="WhatsApp Image 2026-06-29 at 22 29 17" src="https://github.com/user-attachments/assets/9b8f9e33-01ac-4c04-aaea-0e7fb0d36665" />
 
 
 ---
 
 ## Agenda
 
-<img width="1365" height="595" alt="image" src="https://github.com/user-attachments/assets/1e18f8d1-5ffc-4107-961d-3b0396bf5546" />
+<img width="1365" height="600" alt="WhatsApp Image 2026-06-29 at 22 29 44" src="https://github.com/user-attachments/assets/ea80c1f5-90bf-4ea7-a6aa-7ca8c34c26c1" />
 
 
 ---
 
 ## Odontograma
 
-<img width="1365" height="599" alt="image" src="https://github.com/user-attachments/assets/87835632-649d-4594-8f03-30e37edc6ece" />
-
-<img width="1365" height="597" alt="image" src="https://github.com/user-attachments/assets/c2f81112-0466-455d-abf9-09d300460d70" />
+<img width="1365" height="597" alt="WhatsApp Image 2026-06-29 at 22 30 10" src="https://github.com/user-attachments/assets/a239f230-0a24-47b0-8556-8a3dfba17a69" />
 
 
 ---
 
-# ✨ Funcionalidades
+## Cadastro de Pacientes
 
-✅ Cadastro de pacientes
+<img width="1365" height="597" alt="WhatsApp Image 2026-06-29 at 22 29 29" src="https://github.com/user-attachments/assets/3b52891f-2bdb-470a-bd81-0710a865c8e1" />
 
-✅ Pesquisa de pacientes
-
-✅ Agenda de consultas
-
-✅ Controle de horários ocupados
-
-✅ Dashboard em tempo real
-
-✅ Odontograma interativo
-
-✅ Registro de procedimentos
-
-✅ Histórico de atendimentos
 
 ---
 
 # 📂 Estrutura do Projeto
 
-```
-OdontoHub
-│
-├── estático/
-│   ├── css
-│   ├── js
-│   └── imagens
-│
-├── modelos/
-│
-├── app.py
-├── database.py
-├── odontohub.db
-└── README.md
+```text
+odontohub/
+
+│── app.py
+│── requirements.txt
+│── README.md
+
+│── database/
+
+│── static/
+│   ├── css/
+│   ├── js/
+│   └── img/
+
+│── templates/
+
+└── assets/
 ```
 
 ---
 
-# ⚙️ Como executar
+# ⚙️ Como Executar o Projeto
 
-Clone o projeto
-
-```bash
-git clone https://github.com/devPedro17/sistema-odontologico.git
-```
-
-Entre na pasta
+## 1. Clone o repositório
 
 ```bash
-cd sistema-odontologico
+git clone https://github.com/devPedro17/odontohub.git
 ```
 
-Instale as dependências
+## 2. Entre na pasta
 
 ```bash
-pip install -r requisitos.txt
+cd odontohub
 ```
 
-Execute
+## 3. Instale as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+## 4. Execute a aplicação
 
 ```bash
 python app.py
 ```
 
-Abra no navegador
+---
 
-```
-http://127.0.0.1:5000
-```
+# 🎯 Objetivos do Projeto
+
+- Aplicar conceitos de desenvolvimento Full Stack.
+- Aprimorar conhecimentos em Flask.
+- Integrar frontend e backend.
+- Trabalhar com banco de dados relacional.
+- Construir uma aplicação real para portfólio.
 
 ---
 
-# 🎯 Objetivo
+# 🔮 Melhorias Futuras
 
-Este projeto foi desenvolvido para colocar em prática conhecimentos em:
-
-- Python
-- Flask
-- SQLite
-- JavaScript
-- HTML
-- CSS
-- Desenvolvimento Full Stack
-
-Além de simular um sistema utilizado em consultórios odontológicos.
+- Login de usuários.
+- Controle de permissões.
+- Upload de exames.
+- Geração de PDF.
+- Integração com WhatsApp.
+- Sistema financeiro.
+- Controle de estoque.
+- Responsividade para dispositivos móveis.
 
 ---
 
-# 🚧 Próximas melhorias
-
-- Login de usuários
-- Controle financeiro
-- Exportação de PDF
-- Upload de radiografias
-- Prontuário completo
-- Responsividade para dispositivos móveis
-
----
-
-# 👨‍💻 Autor
+# 👨‍💻 Desenvolvedor
 
 **Pedro Cunha**
 
-Desenvolvedor Full Stack em formação.
+Estudante de Sistemas de Computação
 
-LinkedIn *(https://www.linkedin.com/in/dev-pedrocunha/)*
+Desenvolvedor Full Stack em formação
+
+📧 Email: cunha20pedro@gmail.com
+
+🔗 LinkedIn:
+https://linkedin.com/in/dev-pedrocunha
+
+🐙 GitHub:
+https://github.com/devPedro17
 
 GitHub: https://github.com/devPedro17
